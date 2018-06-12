@@ -46,3 +46,24 @@
 
 // console.log(filter(myNames, filter))
 
+// 3. Functions as Return values
+
+const hazardWarningCreator = function(typeOfWarning) {
+    let warningCounter = 0;
+    return function(location) {
+        warningCounter++;
+        console.log(`"DANGER! There is a ${typeOfWarning} hazard at ${location}!"`);
+        console.log(`"The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!"`);
+    }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const heavyRain = hazardWarningCreator('Heavy rain on the highway')
+const realHot = hazardWarningCreator('2 hot, 2 hot');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Times Square');
+heavyRain('New Orleans');
+heavyRain('Portland');
+realHot('Atlanta');
+realHot('Miami')
