@@ -85,15 +85,20 @@ let words = 'noggin oreo the moon time tele steed his tent apollo her lives thou
 let wordsArr = words.split(" ");
 
 const decoded = function(arr) {
+    let word = [];
     for (let i = 0; i < arr.length; i++) {
-        let result = [];
         if (arr[i].length === 3) {
-            result.push(' ');
+            word.push(' ');
         } else {
-            result.push(arr[i].charAt(arr[i].length-1).toUpperCase());
+            word.push(arr[i].charAt(arr[i].length-1).toUpperCase());
+
         }
-        console.log(result.reduce());
-    }
+    }  console.log(word.reduce((a, b) => a + b));
+    
+    // word.reduce(function(letter) {
+    //     console.log(letter + '');
+    //     return letter + '';
+    // });
 };
 
 decoded(wordsArr);
